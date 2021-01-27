@@ -23,7 +23,7 @@ library(installr)
 updateR()
 ```
 
-- Para fazer download do RStudio, clique [aqui](https://www.rstudio.com/products/rstudio/download/#download). Mesmo você já tenha o RStudio instalado há algum tempo, repita este processo. As versões mais novas costumam dar menos problemas e trazem algumas facilidades.
+- Para fazer download do RStudio, clique [aqui](https://www.rstudio.com/products/rstudio/download/#download). Mesmo você já tenha o RStudio instalado há algum tempo, repita este processo. As versões atualizadas costumam dar menos problemas e trazem algumas facilidades.
 
 ### Mac e Linux
 
