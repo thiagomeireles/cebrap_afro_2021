@@ -1,4 +1,4 @@
-#  Cebrap.lab - Textos como dados: raspagem e mineração de dados em R - preparação para o curso
+# Curso R Afro Cebrap: "manipulação, raspagem e mineração de dados em R" do cebrap.lab - preparação para o curso
 
 Antes do curso, é esperado que todos os alunos instalem o R e o RStudio em suas máquinas. 
 
