@@ -10,11 +10,9 @@ Antes de iniciar o curso, alguns tutoriais estão disponíveis para conhecer ou 
 
 [Tutorial Pré-Curso IV: Operadores relacionais](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/pre-curso/Tutorial_4.md)
 
-Os dois primeiros tutoriais apresentam a linguagem e os objetos que podemos manipular, é essencial.
+Os dois primeiros tutoriais apresentam a linguagem e os objetos que podemos manipular, e são essenciais. O quarto e último é um pouco mais curto e apresenta operadores relacionais, é muito importante para manipulação e raspagem de dados.
 
 O terceiro tutorial apresenta algumas formas de abertura de dados externos ao R, é opcional.
-
-O quarto e último é um pouco mais curto e apresenta operadores relacionais, é muito importante manipulação e raspagem de dados.
 
 Tente realizar ao menos os dois primeiros antes do primeiro encontro e o quarto antes do segundo encontro.
 
