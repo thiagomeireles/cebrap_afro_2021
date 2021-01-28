@@ -20,4 +20,4 @@ Tente realizar ao menos os dois primeiros antes do primeiro encontro e o quarto 
 
 ### Dica de Leitura
 
-O livro *Hands-on Programming With R*, de Garret Grolemund, é bastante intuitivo e claro para aprendizado de T. O conteúdo apresentado aqui passa pelo  Prefácio e os Capítulos 1 a 2, que compõem a Part I, além das Partes II e III. 
+O livro *Hands-on Programming With R*, de Garret Grolemund, é bastante intuitivo e claro para aprendizado de T. O conteúdo apresentado aqui passa pelo  Prefácio e os Capítulos 1 a 2, que compõem a Parte I, além das Partes II e III. O link está disponível na página inicial do nosso repositório.
