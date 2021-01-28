@@ -1,4 +1,4 @@
-# Curso R Afro Cebrap: manipulação, raspagem e mineração de dados em R" do cebrap.lab
+# [Cebrap.lab Afro] Curso de manipulação, raspagem e mineração de dados em R
 
 ## Informações básicas
 
