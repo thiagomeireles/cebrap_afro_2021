@@ -1,4 +1,4 @@
-# Curso R Afro Cebrap: "manipulação, raspagem e mineração de dados em R" do cebrap.lab
+# [Cebrap.lab Afro] Curso de manipulação, raspagem e mineração de dados em R: Tutoriais Básicos
 
 Antes de iniciar o curso, alguns tutoriais estão disponíveis para conhecer ou retomar o contato com a linguagem R.
 
