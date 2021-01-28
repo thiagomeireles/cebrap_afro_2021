@@ -1,11 +1,4 @@
----
-title: "Tutorial Pré-Curso II: Entendendo o ambiente e os objetos"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Tutorial Pré-Curso II: Entendendo o ambiente e os objetos
 
 # O básico do R
 
