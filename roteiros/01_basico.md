@@ -3,8 +3,11 @@
 Antes de iniciar o curso, alguns tutoriais estão disponíveis para conhecer ou retomar o contato com a linguagem R.
 
 [Tutorial Pré-Curso I: data_frames](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/pre-curso/Tutorial_1.md)
+
 [Tutorial Pré-Curso II: Entendendo o ambiente e os objetos](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/pre-curso/Tutorial_2.md)
+
 [Tutorial Pré-Curso III: Abindo dados em R](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/pre-curso/Tutorial_3.md)
+
 [Tutorial Pré-Curso IV: Operadores relacionais](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/pre-curso/Tutorial_4.md)
 
 Os dois primeiros tutoriais apresentam a linguagem e os objetos que podemos manipular, é essencial.
