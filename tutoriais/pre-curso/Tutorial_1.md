@@ -1,7 +1,4 @@
----
-title: "Tutorial Pré-Curso I: data_frames"
-output: html_document
----
+# Tutorial Pré-Curso I: data_frames
 
 # Os *data_frames*
 
