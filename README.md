@@ -89,8 +89,8 @@ Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
 
 *Incompletas, algumas ainda a incluir*
 
-- Grolemund, Garrett (2014). Hands-On Programming with R. Ed: O'Reilly Media. Não distribuído gratuitamente. Informações no site da editora [aqui](http://shop.oreilly.com/product/0636920028574.do)
-- Wichkam, Hadley e Grolemund, Garrett (2016). R for Data Science. Ed: O'Reilly Media. Disponível gratuitamente Disponível gratuitamente [aqui](http://r4ds.had.co.nz/data-visualisation.html)
-- Wichkam, Hadley (2014). Advanced R. Ed: Chapman and Hall/CRC. Disponível gratuitamente Disponível gratuitamente [aqui](http://adv-r.had.co.nz/)
-- Gillespie, Colin e Lovelace, Robin (2016). Efficient R programming. Ed: O'Reilly Media. Disponível gratuitamente Disponível gratuitamente [aqui](https://csgillespie.github.io/efficientR/)
+- Grolemund, Garrett (2014). Hands-On Programming with R. Ed: O'Reilly Media. Disponível gratuitamente [aqui](https://rstudio-education.github.io/hopr/)
+- Wichkam, Hadley e Grolemund, Garrett (2016). R for Data Science. Ed: O'Reilly Media. Disponível gratuitamente [aqui](http://r4ds.had.co.nz/data-visualisation.html)
+- Wichkam, Hadley (2014). Advanced R. Ed: Chapman and Hall/CRC. Disponível gratuitamente [aqui](http://adv-r.had.co.nz/)
+- Gillespie, Colin e Lovelace, Robin (2016). Efficient R programming. Ed: O'Reilly Media. Disponível gratuitamente [aqui](https://csgillespie.github.io/efficientR/)
 
