@@ -15,7 +15,7 @@ No início da primeira aula faremos um tour rápido para entender o que esse IDE
 ### Windows 10
 
 - Para instalar a versão mais recente de R, caso não possua uma instalação, clique [aqui](https://cran.r-project.org/).
-- Para instalar a versão mais recente de R, caso já possua instalado, execute o código abaixo e siga as instruções:
+- Para instalar a versão mais recente de R, caso já o possua instalado, execute o código abaixo e siga as instruções:
 
 ```{r}
 install.packages("installr")
@@ -23,7 +23,7 @@ library(installr)
 updateR()
 ```
 
-- Para fazer download do RStudio, clique [aqui](https://www.rstudio.com/products/rstudio/download/#download). Mesmo você já tenha o RStudio instalado há algum tempo, repita este processo. As versões atualizadas costumam dar menos problemas e trazem algumas facilidades.
+- Para fazer download do RStudio, clique [aqui](https://www.rstudio.com/products/rstudio/download/#download). Mesmo você já tenha o RStudio instalado há algum tempo, repita este processo. As versões atualizadas costumam dar menos problemas e trazem algumas novas facilidades.
 
 ### Mac e Linux
 
