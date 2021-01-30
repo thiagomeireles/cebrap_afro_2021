@@ -1,5 +1,35 @@
 # Tutorial Pré-Curso I: data_frames
 
+# Pacotes no R
+
+Muitas ações que precisamos em atividades diversas executadas não fazem parte da biblioteca básica do R, mas outros desenvolvedores já desenvolveram funções para isso. Em muitos casos, diversas funções são compiladas em novas bibliotecas direcionadas para atividades bem específicas. Essas bibliotecas (ou pacotes de funções) são disponibilziadas pela comunidade de R e, após aprovação, vão para um diretório com bibliotecas já testadas, o [CRAN](https://cran.r-project.org/web/packages/policies.html).
+
+Nesse primeiro momento, vamos instalar uma de uma biblioteca chamada *tidyverse*, falaremos um pouco mais dela depois. Assim, nossa primeira ação é realizar o processo de instalação de uma biblioteca.Para isso, basta executarmos o comando abaixo:
+
+```{r}
+install.packages("tidyverse")
+```
+
+No entanto, mesmo com a biblioteca instalada as funções não ficam disponíveis automaticamente. É necessário carregar a biblioteca para torná-las disponíveis. Assim, vamos executar o comando para tornar as funções da biblioteca *tidyverse* disponíveis. Basta executar o comando abaixo:
+
+```{r}
+library(tidyverse)
+```
+
+Excelente! Já temos boa parte das funções que precisamos disponíveis para o nosso primeiro tutorial. Vamos utilizá-las logo mais.
+
+# Tidyverse
+
+ O _tidyverse_ é uma compilação de diversas bibliotecas que, grosso modo, compõem uma linguagem "alternativa" dentro do R. Os pacotes mais conhecidos são o _dplyr_ e o _ggplot2_, também utilizaremos o _rvest_ para capturar dados das páginas da internet.
+
+Diversas funções que fazem parte do _tidyverse_ serão utilizadas ao longo da semana e serão destacadas quando surgirem. Uma outra forma de checar se ele está instalado é utilizando um processo um pouco mais complexo: pediremos para que o R cheque se o pacote já está instalado e, caso não esteja, realize a instalação. Façamos isso pro *dplyr*.
+
+```{r}
+if (!require("dplyr")) install.packages("dplyr"); library(dplyr)
+```
+
+Dica: se você "chamar" o pacote _tidyverse_, não precisará chamar *dplyr*, pois a função do _tidyverse_ é carregar todos os pacotes que o compõem.
+
 # Os *data_frames*
 
 Uma característica distintiva da linguagem de programação R é ter sido desenvolvida para a análise de dados. E quando pensamos em análise de dados, a protagonista do show é a *base de dados* ou, como vamos conhecer a partir de agora, *data_frame*. Começaremos daqui antes de seguir para aspectos mais básicos da linguagem, como quais são os tipos de objetos mais comuns.
