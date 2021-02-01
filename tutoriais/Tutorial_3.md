@@ -1,4 +1,4 @@
-# "Tutorial 3: Bases de dados relacionais"
+# Tutorial 3: Bases de dados relacionais
 
 ## Bases de dados relacionais com a gramática do pacote dplyr
 
