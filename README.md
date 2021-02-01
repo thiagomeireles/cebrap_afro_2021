@@ -64,7 +64,7 @@ Os participantes, ao fim do curso, serão capazes de:
 
 Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, as linhas abaixo serão preenchidas com links com as descrições do que esperamos em cada dia de curso e como o faremos. Serão indicadas leituras para melhor compreensão do conteúdo, mas em boa parte do curso elas são cobertas de forma satisfatória pelos tutoriais.
 
-[01/02/2021]() - Manipulação de dados em R: base e *dplyr*
+[01/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_01.md) - Manipulação de dados em R: base e *dplyr*
 
 [03/02/2021]() - O básico da raspagem de dados: Introdução à raspagem em *html* utilizando um portal de notícias
 
@@ -84,6 +84,12 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 ### Tutoriais
 
 Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
+
+[Tutorial 1](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_1.md) - Manipulação de dados com o R *base*
+
+[Tutorial 2](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_2.md) - Manipulação de dados em R com o *dplyr*
+
+[Tutorial 3](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_3.md) - Bases de dados relacionais
 
 ## Referências
 
