@@ -66,19 +66,19 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [01/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_01.md) - Manipulação de dados em R: base e *dplyr*
 
-[03/02/2021]() - O básico da raspagem de dados: Introdução à raspagem em *html* utilizando um portal de notícias
+[03/02/2021] - O básico da raspagem de dados: Introdução à raspagem em *html* utilizando um portal de notícias
 
-[05/02/2021]() - Desafios de raspagem de dados: Automatização da raspagem em *html* e aplicação a outro portal de notícias
+[05/02/2021] - Desafios de raspagem de dados: Automatização da raspagem em *html* e aplicação a outro portal de notícias
 
-[08/02/2021]() - Raspagem por termos: Diário Oficial da União
+[08/02/2021] - Raspagem por termos: Diário Oficial da União
 
-[10/02/2021]() - Twitter: utilizando o *rtweet* para acessar a API
+[10/02/2021] - Twitter: utilizando o *rtweet* para acessar a API
 
-[12/02/2021]() - Introdução à manipulação de textos como dados: pacotes *string*, *tm* e *tidytext*
+[12/02/2021] - Introdução à manipulação de textos como dados: pacotes *string*, *tm* e *tidytext*
 
-[19/02/2021]() - Introdução à análise quantitativa de texto: conhecendo o pacote *quanteda*
+[19/02/2021] - Introdução à análise quantitativa de texto: conhecendo o pacote *quanteda*
 
-[22/02/2021]() - Modelagem básica: apresentação de métodos de análise quantitativa de texto
+[22/02/2021] - Modelagem básica: apresentação de métodos de análise quantitativa de texto
 
 
 ### Tutoriais
