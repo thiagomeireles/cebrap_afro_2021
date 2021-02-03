@@ -14,9 +14,9 @@ Hoje é a aula mais importante do curso, na qual trataremos de uma situação ma
 
 1- Antes de entrarmos no universo da raspagem de dados, dedicaremos a primeira parte da aula para dúvidas dos tutoriais do primeiro dia.
 
-2- Na sequência, a primeira experiência de raspagem de dados no curso será com o [Tutorial 1](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_4.md). Neste tutorial, veremos rapidamente como extrair dados que estão em *tabelas* nos sites e alguns aspectos imporantes para o curso;
+2- Na sequência, a primeira experiência de raspagem de dados no curso será com o [Tutorial 4](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_4.md). Neste tutorial, veremos rapidamente como extrair dados que estão em *tabelas* nos sites e alguns aspectos imporantes para o curso;
 
-3- O [Tutorial 2](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_5.md): Realizar a extração de qualquer conteúdo de uma página utilizando os "caminhos" dos elementos da página no código html
+3- O [Tutorial 5](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_5.md): Realizar a extração de qualquer conteúdo de uma página utilizando os "caminhos" dos elementos da página no código html
 
 ## Zoom e lista de presença
 
