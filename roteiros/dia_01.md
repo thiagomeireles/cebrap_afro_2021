@@ -26,12 +26,6 @@ Caso queiram explorar um pouco mais as opções para formatação de textos e c�
 
 O RStudio oferece dois guias com as principais funções do *RMarkdown*, um mais [curto](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) e um pouco mais [longo](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
 
-## Zoom e lista de presença
-
-O link para nosso encontro no [Zoom](https://zoom.us/j/91958364852?pwd=QmRHVnZNZUFVSHZXTG1BQmc1YU42QT09) está disponível até o horário do final da aula.
-
-Não se esqueçam de "assinar" a [lista de presença](https://docs.google.com/spreadsheets/d/1OOF-Jj2FfHHw-q3nYk-7sY9OBt9PvvNO92NSvUDVarM/edit#gid=0).
-
 ## Dica de Leitura
 
 O livro *R for Data Science* possui algumas seções que tratam dos tópicos de hoje. Ele é gratuito e já está entre as referências indicadas para o curso. Sua estrutrura também é voltada para uma abordagem mais prática, então a maioria dos capítulos são curtos e de leitura rápida e fácil. Se puderem, dêem uma olhada na [Introdução](http://r4ds.had.co.nz/introduction.html)
