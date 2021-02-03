@@ -18,9 +18,9 @@ Hoje é a aula mais importante do curso, na qual trataremos de uma situação ma
 
 3- O [Tutorial 5](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_5.md): Realizar a extração de qualquer conteúdo de uma página utilizando os "caminhos" dos elementos da página no código html
 
-## Zoom e lista de presença
+## Slides
 
-O link para nosso encontro no [Zoom](https://zoom.us/j/99522796601?pwd=MVBBTTBwUzhNSm1mVWs5VklFZ1BsZz09) está disponível até o horário do final da aula.
+Os slides utilizados na aula podem ser baixados por [este link](https://drive.google.com/file/d/1xB6PlodjQlwR9cY6jT_CfR0M6ajlGIWG/view?usp=sharing).
 
-Não se esqueçam de "assinar" a [lista de presença](https://docs.google.com/spreadsheets/d/1OOF-Jj2FfHHw-q3nYk-7sY9OBt9PvvNO92NSvUDVarM/edit#gid=0).
+
 
