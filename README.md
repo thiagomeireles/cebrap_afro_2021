@@ -70,7 +70,7 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [05/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_03.md) - Desafios de raspagem de dados: Automatização da raspagem em *html* e novos desafios
 
-[08/02/2021] - Raspagem por termos: Diário Oficial da União
+[08/02/2021] - Raspagem por termos: Diário Oficial da União e Estadão
 
 [10/02/2021] - Twitter: utilizando o *rtweet* para acessar a API
 
