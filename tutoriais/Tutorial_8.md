@@ -77,6 +77,8 @@ Para não precisarmos de um *Docker* que traria muito mais dificuldade para noss
 Na sequência, vinculamos um *client* ao servidor para que possamos [abrir e fazer as requisições em linguagem R ao servidor que acessamos](https://www.pawangaria.com/post/automation/what-is-selenium-webdriver/). 
 
 ```{r}
+if (!require("RSelenium")) install.packages("RSelenium"); library(RSelenium)
+
 rD <- rsDriver(browser = c("chrome"), chromever = "88.0.4324.96",
                port = 4567L)
 cliente <- rD$client
