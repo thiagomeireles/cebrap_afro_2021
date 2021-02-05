@@ -1,4 +1,4 @@
-# [Cebrap.lab Afro] Curso de manipulação, raspagem e mineração de dados em R: automatizando a coleta e novos desafios
+# [Cebrap.lab Afro] Curso de manipulação, raspagem e mineração de dados em R: Desafios de raspagem de dados: Automatização da raspagem em *html* e novos desafios
 
 ## Objetivos gerais
 
