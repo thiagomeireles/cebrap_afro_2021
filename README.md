@@ -68,7 +68,7 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [03/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_02.md) - O básico da raspagem de dados: Introdução à raspagem em *html* utilizando um portal de notícias
 
-[05/02/2021] - Desafios de raspagem de dados: Automatização da raspagem em *html* e aplicação a outro portal de notícias
+[05/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_03.md) - Desafios de raspagem de dados: Automatização da raspagem em *html* e novos desafios
 
 [08/02/2021] - Raspagem por termos: Diário Oficial da União
 
@@ -90,6 +90,16 @@ Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
 [Tutorial 2](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_2.md) - Manipulação de dados em R com o *dplyr*
 
 [Tutorial 3](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_3.md) - Bases de dados relacionais
+
+[Tutorial 4](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_4.md) - Introdução ao rvest e revisão
+
+[Tutorial 5](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_5.md) - html com o sistema de busca da Folha de São Paulo
+
+[Tutorial 6](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_6.md) - Automatizando a raspagem na Folha de São Paulo
+
+[Tutorial 7](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_7.md) - Raspando notícias da Folha
+
+[Tutorial 8](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_8.md) - Coleta de dados no site do Diário Oficial da União, primeira tentativa
 
 ## Referências
 
