@@ -70,7 +70,7 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [05/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_03.md) - Desafios de raspagem de dados: Automatização da raspagem em *html* e novos desafios
 
-[08/02/2021] - Raspagem por termos: Diário Oficial da União e Estadão
+[08/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_03.md) - Raspagem por termos: Diário Oficial da União e Estadão
 
 [10/02/2021] - Twitter: utilizando o *rtweet* para acessar a API
 
@@ -100,6 +100,10 @@ Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
 [Tutorial 7](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_7.md) - Raspando notícias da Folha
 
 [Tutorial 8](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_8.md) - Coleta de dados no site do Diário Oficial da União, primeira tentativa
+
+[Tutorial 9](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_9.md) - Capturando as publicações do DOU
+
+[Tutorial 10](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_10.md) - Inícido da coleta de dados no sistema de busca do Estadão
 
 ## Referências
 
