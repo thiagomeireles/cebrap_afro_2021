@@ -1,4 +1,4 @@
-# Tutorial 8: Inícido da coleta de dados no sistema de busca do Estadão
+# Tutorial 10: Inícido da coleta de dados no sistema de busca do Estadão
 
 ## Apresentação do problema
 
