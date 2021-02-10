@@ -72,7 +72,7 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [08/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_04.md) - Raspagem por termos: Diário Oficial da União e Estadão
 
-[10/02/2021] - Twitter: utilizando o *rtweet* para acessar a API
+[10/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_05 ;çp.md) - Twitter: Notícias do Estadão e Twitter
 
 [12/02/2021] - Introdução à manipulação de textos como dados: pacotes *string*, *tm* e *tidytext*
 
@@ -104,6 +104,10 @@ Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
 [Tutorial 9](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_9.md) - Capturando as publicações do DOU
 
 [Tutorial 10](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_10.md) - Inícido da coleta de dados no sistema de busca do Estadão
+
+[Tutorial 11](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_11.md) - Coleta das notícias no sistema de busca do Estadão
+
+[Tutorial 12](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_12.md) - Twitter
 
 ## Referências
 
