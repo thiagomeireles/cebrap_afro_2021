@@ -72,7 +72,7 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [08/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_04.md) - Raspagem por termos: Diário Oficial da União e Estadão
 
-[10/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_05 ;çp.md) - Twitter: Notícias do Estadão e Twitter
+[10/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_05.md) - Twitter: Notícias do Estadão e Twitter
 
 [12/02/2021] - Introdução à manipulação de textos como dados: pacotes *string*, *tm* e *tidytext*
 
