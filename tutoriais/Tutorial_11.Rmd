@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE, message = F, warning = F, results = "hide")
 
 No último tutorial aprendemos a controlar o nosso navegador Chrome de forma remota utilizando o *RSelenium* e capturamos todos os links das notícias relacionadas ao termo "quilombo" para o último ano. Hoje daremos o passo seguinte que é a captura do conteúdo dessas notícias de forma automatizada. Para isso, vamos repassar rapidamente pelos passos utilizados no último tutorial.
 
-1. Carregamos os pacotes, criamos nosso Driver do Chrome virtual e abrimos nossa conexão com o cliente:
+1. Carregamos os pacotes, criamos nosso Driver do Chrome virtual e abrimos nossa conexão com o cliente]. Se tiverem algum problema com a porta (algum software no seu computador pode utilizar a 4567L), troque pela 4444L.
 
 ```{r}
 library(RSelenium)
