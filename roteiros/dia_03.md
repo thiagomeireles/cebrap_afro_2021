@@ -21,8 +21,3 @@ Aprenderemos hoje a acessar um navegador pelo R, criando um ambiente virtual do 
 
 A aula de hoje não terá slides.
 
-## Zoom e lista de presença
-
-O encontro no Zoom pode ser acessado por [aqui](https://zoom.us/j/96152005445?pwd=ZlB0WHVmTzJvL0grSkg1UGY0WlM0UT09).
-
-Não esqueça de marcar sua presença em nossa [lista](https://docs.google.com/spreadsheets/d/1OOF-Jj2FfHHw-q3nYk-7sY9OBt9PvvNO92NSvUDVarM/edit#gid=0).
