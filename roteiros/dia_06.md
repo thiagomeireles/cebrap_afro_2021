@@ -14,7 +14,9 @@ A aula de hoje está focada na mineiração de texto (*text mining*) e apesentar
 
 - O [Tutorial 15](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_15.md) traz o pacote *tidytext*, a alternativa para mineração de texto na família *tidyverse*. Ele é mais recente e tem novas possibilidades para integração com outros pacotes da família *tidy*.
 
-## Slides
+## Links
+
+Caso queiram se aprofundar no uso do *tidytext* para análise de textos, o livro [Text Mining with R](https://www.tidytextmining.com/) é um bom caminho. Nele são apresentadas algumas outras formas de análise que não trataremos por aqui.
 
 [Slides do encontro]
 
