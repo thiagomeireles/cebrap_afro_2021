@@ -8,7 +8,7 @@
 
 ### Data, Hora e Local
 
-De 01 a 19 de fevereiro, das 9 às 12 horas das segundas, quartas e sextas-feira.
+De 01 a 24 de fevereiro, das 9 às 12 horas das segundas, quartas e sextas-feira.
 
 Os encontros serão via Zoom e utilizarão material disponível no repositório do curso..
 
@@ -76,9 +76,9 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [12/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_06.md) - Introdução à manipulação de textos como dados: pacotes *string*, *tm* e *tidytext*
 
-[19/02/2021] - Introdução à análise quantitativa de texto: conhecendo o pacote *quanteda*
+[22/02/2021] - Introdução à análise quantitativa de texto: conhecendo o pacote *quanteda*
 
-[22/02/2021] - Modelagem básica: apresentação de métodos de análise quantitativa de texto
+[24/02/2021] - Modelagem básica: apresentação de métodos de análise quantitativa de texto
 
 
 ### Tutoriais
