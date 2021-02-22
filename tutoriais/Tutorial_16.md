@@ -1,0 +1,400 @@
+# Tutorial 16: O pacote *quanteda*
+
+## Instalando os pacotes
+
+Hoje trabalharemos a partir do pacote *quanteda*. Nas instalações hoje teremos algumas diferenças nas instalações de pacotes, uma vez que nem todos estão disponíveis como o *quanteda* no repositório [CRAN](https://CRAN.R-project.org/package=quanteda), o que vimos nos outros exemplos de pacotes.
+
+```{r, eval = FALSE}
+install.packages("quanteda")
+```
+
+Além das versões mais estáveis, é possível baixar versões de desenvolvedor dos pacotes, as [versões de GitHub](https://github.com/quanteda/quanteda). Recomendo que mantenham os pacotes do CRAN quando disponíveis, elas tendem a ser mais estáveis.
+
+Além do pacote, seus desenvolvedores sugerem a instalação de alguns pacotes adicionais. Os dois primeiros também estão no CRAN.
+
+O pacote [*readtext*](https://github.com/quanteda/readtext) é uma alternativa amigável para leitura de textos em R proveniente de quase qualquer formato. 
+
+Já o [*spacyr*](https://github.com/quanteda/spacyr) é um pacote de PNL (Processamento Natural de Linguagem) que contem marcação de classe gramatical, reconhecimento de entidade e análise de dependência.
+
+```{r, eval = FALSE}
+install.packages(c("readtext", "spacyr"))
+```
+
+Já os outros dois são pacotes adicionais ao *quanteda* e não estão no repositório CRAN. Nesse caso, utilizamos o pacote [*devtools*](https://cran.r-project.org/web/packages/devtools/devtools.pdf) (pacote utilizado para desenvolvimento de pacotes). No entanto, não carregaremos todas suas funções, utilizaremos uma abordagem diferente aqui chamando diretamente a função especificando de qual pacote ela faz parte. No caso dos pacotes de hoje, eles estão em repositórios do GitHub.
+
+O primeiro é o [*quanteda.corpora*](https://github.com/quanteda/quanteda.corpora) que fornece dados em texto para uso com o *quanteda*
+
+```{r eval = FALSE}
+devtools::install_github("quanteda/quanteda.corpora")
+```
+
+Já o segundo é o [*quanteda.dictionaries*](https://github.com/kbenoit/quanteda.dictionaries) que possui vários dicionários para utilizar com o *quanteda*. 
+
+```{r eval = FALSE}
+devtools::install_github("kbenoit/quanteda.dictionaries")
+```
+
+Espero que tenham percebido a lógica da instalação. Dizemos que queremos que o *devtools* utilize(::) a função *install_github*. Aqui é necessário especificar o usuário/desenvolvedor/repositório do pacote (kbenoit, usuário do Kenneth Benoit que é o diretor do projeto quanteda).
+
+## Criando um corpus
+
+```{r, message = FALSE}
+library("quanteda")
+```
+
+### Opções de fontes de corpus
+
+O *quanteda* ao utilizar a dependência *readtext* tem um pacote bastante eficiente para leitura (fácil) de textos. A principal função do pacote possui o nome do pacote `readtext()`. Com ela é possível importar arquivos do disco ou da internet e gerando um tipo de dataframe que pode ser usado para construção de um objeto corpus com a função `corpus()` do *quanteda*
+
+A função `readtext()` aceita arquivos em texto (`.txt`), valores separados por vírgula (`.csv`), dados formatados em XML ou dados JSON genéricos ou de APIs específicas (sobre dados em JSON, não tratamos no curso mas existem diversos tutoriais disponíveis como [este](https://www.tutorialspoint.com/r/r_json_files.htm)).
+
+Já a função `corpus()` trabalha com vetores character carregados anteriormente no ambiente de trabalho por outras ferramentas, com os objetos `VCorpus` que vimos no pacote *tm* e dataframes que contenham uma coluna de texto ou metadados.
+
+### Criando um corpus a partir de um vetor
+
+Vamos utilizar os dados do DOU que coletamos nos tutoriais anteriores. Assim, o código do próximo chunk carrega os pacotes, organiza e baixa os textos e ajusta a formatação.
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+library(rvest)
+library(stringr)
+library(tidyr)
+library(readr)
+library(readtext)
+
+dados_dou <- read_csv("https://raw.githubusercontent.com/thiagomeireles/cebrap_afro_2021/main/data/dados_dou.csv",
+                      col_types = cols(data = col_date(format = "%d/%m/%Y")))
+```
+
+Voltando, a forma mais simples de criação de um corpus é a que trataremos neste tutorial. Utilizaremos um vetor que já está na memória do R. Para isso, basta aplicarmos a função `corpus()`ao vetor de interesse.
+
+```{r}
+corpus_dou <- corpus(dados_dou$texto)
+```
+
+Veja como é interessante ao pedirmos o resumo do corpus com a função `summary()`. Temos as informações básicas do que cada texto contém.
+
+Existe, também, a possibilidade de adicionarmos variáveis relacinadas a cada um dos documentos ao corpus, como tínhamos no dataframe de onde extraímos o vetor. Para isso, utilizamos a função `docvars()` do pacote *quanteda*. Acrescentaremos ao nosso corpus o título, a data e a edição da publicação.
+
+```{r}
+docvars(corpus_dou, "titulo") <- dados_dou$titulo
+docvars(corpus_dou, "data")   <- dados_dou$data
+docvars(corpus_dou, "edicao") <- dados_dou$edicao
+```
+
+
+## Como um corpus do *quanteda* funciona?
+
+### Princípios de um corpus
+
+No último tutorial passamos rapidamente pela construção de corpus sem destacar o que eles são. Por definição, um corpus é uma "biblioteca" do documento original que foi convertido para um formato mais simples, codificado em UTF-8 (lembram dos encodings?) e armazenado com seus metadados no nível do corpus e do documento (as publicações no nosso caso). O que aplicamos com a função `docvars()` é justamente a aplicação dos metadados no nível do documento. Essas variáveis nos dão informações que descrevem o atributo de cada documento.
+
+A vantagem da utilização de corpus é que eles são projetados para ser mais ou conjunto mais ou menos estático de textos com relação ao seu processamento e à sua análise. Mas o que isso quer dizer? De uma forma mais simples, os textos dos corpus não são projetados para sofrerem alterações internas, como as etapas de limpeza, remoção de pontuação ou de *stopwords*. Na verdade, utilizamos o corpus para extrair textos como parte do processamento e os atribuindo a novos objetos. A ideia aqui é que o corpus se mantenha como uma referência original para outros tipos de análise, como as que os radicais e a pontuação sejam necessárias. Com isso, podemos partir diretamente de um mesmo corpus.
+
+Assim, é importante que saibamos extrair o texto de um corpus, não? Para isso utilizamos simplesmente a função `texts()`, como no exemplo abaixo em que pegaremos a segunda publicação do nosso corpus.
+
+```{r}
+texts(corpus_dou)[2]
+```
+
+Podemos, também, utilizar a função `summary()`para resumir as informações dos textos de um corpus, inclusive definindo quantos desses textos queremos entender. Vamos tentar, como exemplo, que resuma apenas 8.
+
+```{r}
+summary(corpus_dou, n = 8)
+```
+
+Você deve ter observado que na primeira vez que aplicamos o `summary()`para todo o corpus, ele apresentou somente os 100 primeiros resultados. Esse é o padrão aplicado à função. Se quisermos que ele o faça para todos os textos, especificamos em `n` isso com a função `lenght()`. Assim, podemos salvar um novo objeto com o resumo de todo o corpus e, por exemplo, fazer  rapidamente um gráfico descritivo com essas informações.
+
+
+```{r, fig.width = 8}
+tokeninfo <- summary(corpus_dou, n = length(corpus_dou))
+
+library(ggplot2)
+
+tokeninfo %>% 
+  group_by(edicao) %>% 
+  summarise(tokens_edicao = sum(Tokens),
+            publicacoes_edicao = n()) %>% 
+  ungroup() %>% 
+  mutate(tokens_publicacao = tokens_edicao/publicacoes_edicao) %>% 
+  ggplot(aes(x = edicao, y = tokens_publicacao, group = 1)) +
+  geom_line() +
+  geom_point() +
+  xlab("Edição") + ylab("Tokens por publicação") +
+  theme_bw()
+```
+
+Explicando rapidamente os procedimentos com o *dplyr* aplicados antes do gráfico: agrupamos as publicações por edição com a função `group_by()`; resumimos as informações do total de tokens com `sum()` e do número de publicações com `n()` dentro da função `summarise()`; desagrupamos com o `ungroup()` (isso é altamente recomendável para continuar manipulando os dados depois de um `group_by()`); e, por fim, criamos uma variável com o número de tokens por notícia com o `mutate()`. Vocês perceberam que não criamos um novo objeto para isso e iniciamos o `ggplot()` após um *pipe*, o que indica que o argumento *data* da função reconhecerá automaticamente toda manipulação que fizemos anteriormente. Legal, não?
+
+Podemos ver, por exemplo, qual é a notícia com maior texto. Para isso, utilizaremos a função `which.max()`.
+
+```{r}
+tokeninfo[which.max(tokeninfo$Tokens), ]
+```
+
+Encontramos que a "PORTARIA Nº 8, DE 11 DE JANEIRO DE 2021" é a publicação com mais tokens entre todas as obtidas no DOU, mas isso está associado ao grande número de números (sim, é isso mesmo rs) presentes no texto. Não vamos explorá-lo agora, mas é importante não estabelecer a conexão entre grande número de tokens e tamanho do texto como automática.
+
+## Ferramentas para objetos no formato corpus
+
+### Adicionando dois objetos corpus em um só
+
+Com um simples operador de adição, `+`, conseguimos concatenar dois ojetos corpos. Caso possuam conjuntos de variáveis diferentes no nível do documento, serão agrupados de forma que nenhuma informação seja perda. Os metadados no nível do corpus também são concatenados.
+
+```{r}
+corpus1 <- corpus(corpus_dou[1:5])
+corpus2 <- corpus(corpus_dou[53:58])
+corpus3 <- corpus1 + corpus2
+summary(corpus3)
+```
+
+### Subconjuntos de corpus
+
+Podemos extair subconjuntos do nosso corpus aplicando a função `corpus_subset()` que criará um novo corpus baseao em alguma condição lógica que aplicarmos às *docvars*. Podemos, por exemplo, pegar somente publicações de 2021:
+
+```{r}
+summary(corpus_subset(corpus_dou, data >= 2021-01-01))
+```
+
+## Explorando os textos do corpus
+
+A função `kwic()` (keywords-in-context) realiza uma busca por uma palavra e nos pedimete ver os contextos em que ela aparece.
+
+```{r}
+kwic(corpus_dou, pattern = "indígena")
+```
+
+Vamos especificar o *valuetype* como expressão regular (para saber mais, clique[aqui](https://www.rdocumentation.org/packages/quanteda/versions/2.1.2/topics/valuetype)).
+
+```{r}
+kwic(corpus_dou, pattern = "indígena", valuetype = "regex")
+```
+
+Aplicar agora ao termo "cultura":
+
+```{r}
+kwic(corpus_dou, pattern = "cultura")
+```
+
+Podemos aplicar a função para expressões com mais de uma palavra com a função `phrase()`. Vamos ver o quão comum é "bairro quilombo":
+
+```{r}
+kwic(corpus_dou, pattern = phrase("bairro quilombo")) %>%
+    head() # ao aplicar a função, veremos, no máximo) as 6 primeiras ocorrências
+```
+
+Na função `summary()` são paresentadas as variáveis associadas a cada documento - "título", "data" e "edicao". Podemos visualizar somente elas utilizando a função `docvars()`.
+
+```{r}
+head(docvars(corpus_dou))
+```
+
+Caso queiram utilizar outros exemplos de corpus para manipulação, os desenvolvedores do *quanteda* oferecem algumas opções com o pacote [*quanteda.corpora*](https://github.com/quanteda/quanteda.corpora).
+
+## Extraindo recursos de um corpus 
+
+Como vimos acima, o corpus é um objeto do qual obteremos o que precisamos para realizar nossas análise. Por exemplo, antes de realizar qualquer análise, devemos extrair uma matriz associando valores para certos recursos com cada documento (vimos isso com o pacote *tm*, lembram?). O *quanteda* possui a função `dfm()` para produzir essas matrizes. A expressão *dfm* significa *document-feature matrix* e sempre se refere aos documentos nas linhas e aos "recursos" nas colunas A opção por recuros a termos ocorre porque recusos são mais gerais que os termos.
+
+Nós os chamamos de "recursos" em vez de termos, porque os recursos são mais gerais do que os termos, ou seja, podem ser definidos como termos brutos (sem alterações), termos derivados, classes gramaticais de termos, termos após remoção de palavras, etc. Assim, os recursos podem ser tanto gerais como específicos, como os n-gramas que vimos na aula passada. 
+
+## Tokenização de textos
+
+Como vimos na última aula, a tokenização é uma parte importante na análise quantitativa de textos. O pacote *quanteda* oferece uma função bastante poderosa e simples chamada `tokens()`. Com ela, produzimos um objeto intermediário que consiste em uma lista de tokens na forma de vetores *character*, na qual cada elemento da lista corresponde a um documento de entrada. É importante salientar que a função `tokens()`em sua configuração padrão é explicitamente conservadora, ou seja, não remove nada do texto a menos que seja indicado. A única remoção padrão é a dos separadores (pontos, vírgulas, etc.).
+
+```{r}
+publicacoes <- texts(corpus_dou)
+tokens(publicacoes[1])                                               # tokenização padrão
+tokens(publicacoes[1], remove_numbers = TRUE,  remove_punct = TRUE)  # tokenização removendo números e pontuação
+tokens(publicacoes[1], remove_numbers = FALSE, remove_punct = TRUE)  # tokenização removendo pontuação
+tokens(publicacoes[1], remove_numbers = TRUE,  remove_punct = FALSE) # tokenização removendo os números
+tokens(publicacoes[1], remove_numbers = FALSE, remove_punct = FALSE) # tokenização sem remoção de números e pontuação, ou seja, a padrão
+```
+
+Também temos a opção de tokenizar as letras, onde temos uma nova opção chamada `remove_separators` para retirar os espaços entre as palavras da tokenização. A opção padrão é `TRUE`.
+
+```{r}
+tokens(publicacoes[1], what = "character")
+tokens(publicacoes[1], what = "character",
+         remove_separators = FALSE)
+```
+
+Também podemos tokenizar frases com a opção "sentence" em `what`.
+
+```{r}
+tokens(publicacoes[1], what = "sentence")
+```
+
+Ainda temos a opção de concatenar expressões e mantê-las como um único recurso para a análise com a função `tokens_compound()`.
+
+```{r}
+tokens(publicacoes[1]) %>% 
+  tokens_compound(pattern = phrase("de fevereiro"))
+```
+
+
+## Construindo uma matriz documento-recurso
+
+Como dissemos acima, a tokenização de textos é uma etapa intermediária e muitos podem querer simplesmente ir diretamente para a construção de uma matriz documento-recurso. Para isso, o *quanteda* oferece a citada função `dfm()` que realiza a tokenização e tabula os recuros extraídos em uma matriz de documentos por recursos. Os desenvolvedores do pacote classificam a função como um "canivete suíço" pela diversidade de ações que podemos realizar com ela. 
+
+Diferentemente da abordagem conservadora da função `tokens()`, a função `dfm()` aplica certas opções em sua configuração padrão, como `tolower()` (convertendo todas as letras em minúsculas, como vimos em tutoriais passados) e remove as pontuações. Mas é importante saber que todas as opções aplicadas à `tokens()` também podem ser utilizadas na `dfm()`.
+
+Para execução das funções de forma mais eficiente no tutorial, tabalharemos com um subconjunto das publicações de 2021.
+
+```{r}
+corpus_dou_2021 <- corpus_subset(corpus_dou, data >= 01-01-2021)
+
+dfm_publicacoes_2021 <- dfm(corpus_dou_2021)
+dfm_publicacoes_2021[, 1:5]
+```
+
+Na função `dfm()` podemos aplicar outras opções, como a remoção das *stopwords* e a stemização dos tokens.
+
+```{r}
+stopwords_pt <- c(stopwords("portuguese"), "nº", "n", "º",  "conceição", "dias", "cnpj", "josé", "santa", "art", "processo", "portaria")
+
+dfm_publicacoes_2021 <- dfm(corpus_dou_2021,
+                            remove = stopwords_pt,
+                            stem = TRUE, remove_punct = TRUE,
+                            remove_numbers = TRUE)
+dfm_publicacoes_2021[, 1:10]
+```
+
+Vimos que a opção `remove` oferece uma lista de tokens a ser ignorados. A maioria dos usuários utiliza uma lista pré-definida de *stopwords*, sendo definidas para diversas línguas no *quanteda*. Podemos acessá-las pela função `stopwords()`. 
+
+```{r}
+head(stopwords("pt"), 15)                         # Português
+head(c("viram", "a retirada", stopwords("pt")))   # Acrescentando palavras ao português
+
+head(stopwords("en"), 20)                         # Inglês
+head(stopwords("ru"), 10)                         # Russo
+head(stopwords("ar", source = "misc"), 10)        # Árabe
+```
+
+### Visualizando a matriz documento-recurso (*dfm*)
+
+A *dfm* pode ser visualizada no painel do Ambiente Global do RStudio ou utilizando a função `View()`.
+
+```{r}
+View(dfm_publicacoes_2021)
+```
+
+Chamar pela função `textplot_wordcloud()` em uma *dfm* criará uma nuvem de palavras.
+
+```{r warning=FALSE, fig.width = 8, fig.height = 8}
+textplot_wordcloud(dfm_publicacoes_2021)
+```
+
+Assim como na função `wordcloud()` do pacote *wordcloud* visto na última aula, podemos limitar o número de palavras para tornar a núvem mais inteligível.
+
+```{r warning=FALSE, fig.width = 8, fig.height = 8}
+textplot_wordcloud(dfm_publicacoes_2021, max_words = 50)
+```
+
+Para obter a lista dos recursos mais frequentes utilizamos a função `topfeatures()`. Vamos ver para os 10 recursos mais frequentes das publicações de 2021
+
+```{r}
+topfeatures(dfm_publicacoes_2021, 10)
+```
+
+Mesmo editando nossas stopwords, não removemos alguns caracteres sem sentido prático, como "+", "r" e" $"  Para corrigir isso, acrescentamos as palavras quando criarmos a nossa *dfm*.
+
+```{r}
+dfm_publicacoes_2021 <- dfm(corpus_dou_2021,
+                            remove = c("+", "r", "$", "1°", "0001-04", "1524422177k660001", "ug", "°", stopwords_pt ),
+                            stem = TRUE, remove_punct = TRUE,
+                            remove_numbers = TRUE)
+
+topfeatures(dfm_publicacoes_2021, 10)
+```
+
+Produzir uma nuvem de palavras usando o `textplot_wordcloud()` em um objeto *dfm* foi simples, não? Mais bacana é que o pacote *quanteda* possui integração com o *wordcloud* e algumas opções disponíveis na função `wordcloud()` se aplicam aqui. Não personalizamos nossas nuvens de palavra anteriormente, mas vejam o quanto fica mais bonito.
+
+```{r warning=FALSE, fig.width = 7, fig.height = 7}
+set.seed(123)
+textplot_wordcloud(dfm_publicacoes_2021, min_count = 500,
+                   random_order = FALSE,
+                   rotation = .25,
+                   color = RColorBrewer::brewer.pal(8, "Dark2"))
+```
+
+O código acima precisa de alguns esclarecimentos, uma vez que traz alguns elementos novos. O primeiro é a função `set.seed()`, utilizada para tornar replicáveis ações que contam com certa aleatorização, ou seja, fazem com que a ação seja executada sempre da mesma forma mesmo que por definição tenha componentes aleatórios. Para entender as opções da função [`textplot_wordcloud`](https://quanteda.io/reference/textplot_wordcloud.html), acessem o link e vejam o quão poderosa é para a produção desses gráficos. Se terminarem o tutorial, podem voltar e se divertir por aqui hoje; caso não, vejam após o curso. E, por fim, vocês devem ter percebido que chamamos o pacote *RColorBrewer* para importarmos a paleta de cores utilizada com a função `brewer.pal()`.
+
+### Agrupando documentos pela variável de documento
+
+Em muitas análises, estamos interessados em identificar como os textos se diferem de acordo com fatores substantivos que podem ser codificados nas variáveis do documento, ultrapassando os limites dos próprios documentos. Para isso, podemos agrupar quais documentos que possuem o mesmo valor para uma variável documento quando criamos uma *dfm*. 
+
+Por exemplo, podemos pensar que a edição da publicação carrega contextos diferentes e seria importante formar grupos para cada um deles.
+
+```{r}
+dfm_publicacoes_edicoes <- dfm(corpus_dou_2021,
+                               groups = "edicao",
+                               remove = c("+", "r", "$", "1°", "0001-04", "1524422177k660001", "ug", "°", stopwords_pt ),
+                               stem = TRUE, remove_punct = TRUE,
+                               remove_numbers = TRUE)
+```
+
+Podemos ordenar a *dfm* com a função `dfm_sort()` e inspecioná-la.
+
+```{r}
+dfm_sort(dfm_publicacoes_edicoes)
+```
+
+Ficou estranho, não? O agrupamento por edicao é sensível à quantidade de publicações, por isso a grande diferença. Ainda que exista diferença no número de observações, vamos aplicar a classificação de publicações com os termos "indígena" e cultura" (ou que mencionam os dois) criando uma nova variável no nosso banco de publicações para aplicar no corpus. A função `grepl()` identifica expressões regulares, lembram?
+
+```{r}
+dados_dou <- dados_dou %>% 
+  mutate(termo = ifelse(grepl("indígena", publicacoes), "indígena", NA),
+         termo = ifelse(grepl("cultura", publicacoes), "cultura", termo),
+         termo = ifelse(grepl("indígena", publicacoes) & grepl("cultura", publicacoes), "indígena e cultura", termo),
+         termo = ifelse(is.na(termo), "Outros", termo))
+```
+
+Aplicamos no corpus a variável *termo* como *docvars* e criamos um novo subset pós 2010 antes de criar uma nova *dfm* agrupando por termos:
+
+```{r}
+docvars(corpus_dou, "termo") <- dados_dou$termo
+
+corpus_dou_2021 <- corpus_subset(corpus_dou, data >= 01-01-2021)
+
+dfm_publicacoes_termos <- dfm(corpus_dou_2021,
+                              groups = "termo",
+                              remove = c("+", "r", "$", "1°", "0001-04", "1524422177k660001", "ug", "°", stopwords_pt ),
+                              stem = TRUE, remove_punct = TRUE,
+                              remove_numbers = TRUE)
+```
+
+Novamente ordenamos a *dfm* com a função `dfm_sort()` e inspecionamos.
+
+```{r}
+dfm_sort(dfm_publicacoes_termos)
+```
+
+Faz muito mais sentido, não?
+
+### Agrupando palavras por dicionários ou classes de equivalência
+
+Existem dicionários que são aplicados em análises e exploraemos um pouco mais na última aula. Por agora, é importante sabermos que eles aplicam classificações prévias estabelecidas que indicam características que gostaríamos de medir no texto.
+
+Como exemplos, a análise de sentimentos se baseia em uma lista de palavras positivas e negativas. Os trabalhos citados que utilizam dicionários de termos polítics que são associados a determinadas posições. 
+
+Em alguns casos é útil tratar os grupos de palavras como equivalentes para a análise e somar quantos temos em cada classe. Aqui, ainda utilizando nossos dados do DOU, podemos criar um dicionário exemplo para analisar as publicações, definindo termos ligados ao tema "cultura" e outro a debates "indígena" (aqui não tivemos cuidado teórico algum, ok? é somente para fins didáticos).
+
+```{r}
+dicionario <- dictionary(list(cultura  = c("cultura", "quilombo", "tradição"),
+                              indígena = c("indígena", "tribo", "etnia")))
+```
+
+Agora aplicamos o dicionário na *dfm*, que aqui será do nosso subconjunto de publicações a partir de 2010.
+
+```{r}
+corpus_dou_2021 <- corpus_subset(corpus_dou, data >= 01-01-2021)
+
+dfm_publicacoes_dicionario <- dfm(corpus_dou_2021,
+                                  remove = c("+", "r", "$", "1°", "0001-04","1524422177k660001", "ug", "°", stopwords_pt ),
+                                  stem = TRUE, remove_punct = TRUE,
+                                  remove_numbers = TRUE,
+                                  dictionary = dicionario)
+
+dfm_publicacoes_dicionario
+```
+
+Como resultado, temos o número de veses que recursos estão associados a cada um dos grupos definidos. Bacana, não? Essa lógica estava presente em alguns dos métodos de análise quantitativa de texto. É importante saber que é possível utilizar dicionários externos com a função `dictionary()` (nos formatos LIWC and Provalis Research's Wordstat) ou como construir nossos próprios dicionários a partir de bibliotecas estabelecidas.
