@@ -24,6 +24,6 @@ Não esqueça de marcar sua presença em nossa [lista](https://docs.google.com/s
 
 ## Links
 
-[Slides do encontro]
+[Slides do encontro](https://drive.google.com/file/d/1GT08EWj9e3ubl8QwJ7HPYgmRZrYE09BE/view?usp=sharing)
 
 [Artigo Izumi e Moreira](https://www.anpocs.com/index.php/bib-pt/bib-86/11215-o-texto-como-dado-desafios-e-oportunidades-para-as-ciencias-sociais/file)
