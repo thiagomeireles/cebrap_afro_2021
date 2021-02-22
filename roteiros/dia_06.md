@@ -18,10 +18,4 @@ A aula de hoje está focada na mineiração de texto (*text mining*) e apesentar
 
 Caso queiram se aprofundar no uso do *tidytext* para análise de textos, o livro [Text Mining with R](https://www.tidytextmining.com/) é um bom caminho. Nele são apresentadas algumas outras formas de análise que não trataremos por aqui.
 
-[Slides do encontro]
-
-## Zoom e lista de presença
-
-O encontro no Zoom pode ser acessado por [aqui](https://zoom.us/j/96889477128?pwd=cnNoakRaZVIvaXgrTW1hc3RaNnlyUT09).
-
-Não esqueça de marcar sua presença em nossa [lista](https://docs.google.com/spreadsheets/d/1OOF-Jj2FfHHw-q3nYk-7sY9OBt9PvvNO92NSvUDVarM/edit#gid=0).
+[Slides do encontro](https://drive.google.com/file/d/10IPEQUAwbe-s4Th9bHitKEOH4eXTG5yw/view?usp=sharing)
