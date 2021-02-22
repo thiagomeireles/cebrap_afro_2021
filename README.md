@@ -115,7 +115,7 @@ Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
 
 [Tutorial 15](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_15.md) - Análise de texto no R - pacote _tidytext_
 
-[Tutorial 16](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_15.md) - O pacote *quanteda*
+[Tutorial 16](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_16.md) - O pacote *quanteda*
 
 ## Referências
 
