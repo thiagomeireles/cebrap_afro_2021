@@ -10,7 +10,7 @@ Hoje teremos um primeiro contato com o pacote *quanteda*, utilizado para prepara
 
 **Caso seja usuário do MacOS, faça o download do [gfortran](https://github.com/fxcoudert/gfortran-for-macOS/releases) para sua versão**.
 
-**Caso seja usuário do Ubuntu, siga os dois primeiros passos do seguinte [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-16-04).
+**Caso seja usuário do Ubuntu, siga os dois primeiros passos do seguinte [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-r-packages-using-devtools-on-ubuntu-16-04)**.
 
 ## Roteiro
 
