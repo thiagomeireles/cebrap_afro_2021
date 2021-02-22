@@ -76,7 +76,7 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [12/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/roteiros/dia_06.md) - Introdução à manipulação de textos como dados: pacotes *string*, *tm* e *tidytext*
 
-[22/02/2021] - Introdução à análise quantitativa de texto: conhecendo o pacote *quanteda*
+[22/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/tree/main/roteiros/dia_07.md) - Introdução à análise quantitativa de texto: conhecendo o pacote *quanteda*
 
 [24/02/2021] - Modelagem básica: apresentação de métodos de análise quantitativa de texto
 
@@ -114,6 +114,8 @@ Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
 [Tutorial 14](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_14.md) - Análise de texto no R - pacote _tm_
 
 [Tutorial 15](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_15.md) - Análise de texto no R - pacote _tidytext_
+
+[Tutorial 16](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_15.md) - O pacote *quanteda*
 
 ## Referências
 
