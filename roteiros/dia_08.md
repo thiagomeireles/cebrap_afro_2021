@@ -1,4 +1,4 @@
-# [Cebrap.lab Afro] Curso de manipulação, raspagem e mineração de dados em R: O pacote *quanteda*
+# [Cebrap.lab Afro] Curso de manipulação, raspagem e mineração de dados em R: Modelagem básica: apresentação de métodos de análise quantitativa de texto
 
 ## Objetivos Gerais
 
