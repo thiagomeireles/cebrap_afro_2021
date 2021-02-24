@@ -78,7 +78,7 @@ Todas os dias de curso terão roteiros a cumprir. Pouco antes de cada encontro, 
 
 [22/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/tree/main/roteiros/dia_07.md) - Introdução à análise quantitativa de texto: conhecendo o pacote *quanteda*
 
-[24/02/2021] - Modelagem básica: apresentação de métodos de análise quantitativa de texto
+[24/02/2021](https://github.com/thiagomeireles/cebrap_afro_2021/tree/main/roteiros/dia_08.md) - Modelagem básica: apresentação de métodos de análise quantitativa de texto
 
 
 ### Tutoriais
@@ -117,9 +117,11 @@ Os links para os tutoriais serão disponibilizados abaixo antes de cada aula.
 
 [Tutorial 16](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_16.md) - O pacote *quanteda*
 
-## Referências
+[Tutorial 17](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_17.md) - Análise de sentimentos em PT-BR com *quanteda* e *lexiconPT*
 
-*Incompletas, algumas ainda a incluir*
+[Tutorial 18](https://github.com/thiagomeireles/cebrap_afro_2021/blob/main/tutoriais/Tutorial_18.md) - Modelos de análise de texto
+
+## Referências
 
 - Grolemund, Garrett (2014). Hands-On Programming with R. Ed: O'Reilly Media. Disponível gratuitamente [aqui](https://rstudio-education.github.io/hopr/)
 - Wichkam, Hadley e Grolemund, Garrett (2016). R for Data Science. Ed: O'Reilly Media. Disponível gratuitamente [aqui](http://r4ds.had.co.nz/data-visualisation.html)
