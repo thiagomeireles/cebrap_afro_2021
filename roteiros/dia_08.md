@@ -15,7 +15,3 @@ Hoje trabalharemos com as análises utilizando o *quanteda*. Em um primeiro mome
 O encontro no Zoom pode ser acessado por [aqui](https://zoom.us/j/98073207863?pwd=VnNYNkptSnpSUVlrSElDN3RuUWxTZz09).
 
 Não esqueça de marcar sua presença em nossa [lista](https://docs.google.com/spreadsheets/d/1OOF-Jj2FfHHw-q3nYk-7sY9OBt9PvvNO92NSvUDVarM/edit#gid=0).
-
-## Links
-
-[Slides da aula]
